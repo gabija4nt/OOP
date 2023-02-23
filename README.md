@@ -1,4 +1,4 @@
-# v1.2.2 (Vektoriai su random)
+# v0.1.2.2 (Vektoriai su random)
 
 Ši programos versija saugo atsitiktinai sugeneruotus pažymius į vektorių.
 
