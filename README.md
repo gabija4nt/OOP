@@ -1,10 +1,16 @@
-# v0.1.2.1 (Vector su įvedimu)
+# v0.4
 
-Ši programos versija saugo vartotojo įvestus pažymius į vektorių.
+sukurtas failų generatorius. 
+sugeneruojami penki atsitiktinių studentų sąrašų failuai, sudaryti iš: 1 000, 10 000, 100 000, 1 000 000, 10 000 000 įrašų. Su kiekvienu failu atskirai atliekami tokie veiksmai.
+Surūšiuojami studentai į dvi kategorijas:
+- Studentai, kurių galutinis balas < 5.0.
+- Studentai, kurių galutinis balas >= 5.0.
 
-Vartotojas turi įvesti pasirinktą skaičių namų darbų pažymių ir vieną egzamino pažymį.
-Iš namų darbų pasirinktinai skaičiuojamas vidurkis arba mediana.
+Surūšiuoti studentai išvedami į du naujus failus.
 
-Galiausiai apskaičiuojamas galutinis pažymys pagal tokią formulę:
-
-![image](https://user-images.githubusercontent.com/115726083/220991712-63c31e1c-38d7-419f-b5a6-2912668ad0c3.png)
+Išmatuojama programos sparta išskiriant kiek laiko užtruko kiekvienas iš žemiau išvardintų žingsnių:
+- 1 matavimas failų kūrimą ir jo užtarimą. 
+- duomenų nuskaitymas iš failo.
+- studentų rūšiavimas į dvi grupes/kategorijas;
+- surūšiuotų studentų išvedimas į du naujus failus.
+- visos programos veikimo laikas
