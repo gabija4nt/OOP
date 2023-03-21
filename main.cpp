@@ -85,10 +85,29 @@ void spausd(const studentas &temp) {
 }
 
 int main() {
-  int n = 1;
+  int n = 0;
+  char add_more = 't';
   studentas *grupe = new studentas[n];
 
-  for (int i = 0; i < n; i++) pild(grupe[i]);
+  while (add_more == 't' || add_more == 'T') {
+    studentas *temp = new studentas[n+1];
+    for (int i = 0; i < n; i++) {
+      temp[i] = grupe[i];
+    }
+    pild(temp[n]);
+    delete[] grupe;
+    grupe = temp;
+
+    cout << "Ar norite ivesti dar viena studenta? (t/n): ";
+    cin >> add_more;
+
+    while (add_more != 't' && add_more != 'T' && add_more != 'n' && add_more != 'N') {
+      cout << "Klaidinga ivestis. Iveskite 'y' noredami prideti dar viena studenta arba 'n' noredami sustabdyti ivesti: ";
+      cin >> add_more;
+    }
+
+    n++;
+  }
 
   char bud;
   cout << "Prasome pasirinkti pazymiu apdorojimo buda: vidurkis - v arba mediana - m: ";
@@ -112,7 +131,7 @@ int main() {
     }
 
   cout << "----------------------------------------------" << endl;
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < n-1; i++)
     spausd(grupe[i]);
 
   delete[] grupe;
