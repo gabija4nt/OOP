@@ -1,14 +1,14 @@
-# v0.5.2 Sąrašo (List) testavimas
+# v0.5.3 Abipusio dėklo (Deque) testavimas
 
 Konteinerių testavimas: matuojama v0.4 programos sparta panaudojant skirtingų tipų konteinerius.
 
-Konteinerio tipas v0.5.2 - Sąrašas (List).
+Konteinerio tipas v0.5.3 - Abipusis dėklas (Deque).
 
 | Žingsniai | 1 000  | 10 000 | 100 000 | 1 000 000 | 10 000 000 |
 | --- | --- | --- | --- | --- | --- |
-| Nuskaitymas |0.007375|0.044485|0.374652|3.88704|42.2414|
-| Rūšiavimas |0.000144|0.002066|0.040561|0.643091|10.7094|
-| Skirstymas |0.000172|0.002558|0.024627|0.267473|4.58699|
+| Nuskaitymas (s) |0.012539|0.044168|0.362999|5.42481|46.9974|
+| Rūšiavimas (s) |0.000425|0.004451|0.046844|0.484939|5.84639|
+| Skirstymas (s) |0.000423|0.001185|0.024627|0.127211|2.3182|
 
 
 Testavimo sistemos parametrai:
