@@ -1,17 +1,20 @@
-# v0.4
+# v0.5.1 Vektoriaus testavimas
 
-sukurtas failų generatorius. 
-vartotojui pasirinkus, sugeneruojami penki atsitiktinių studentų sąrašų failaii, sudaryti iš: 1 000, 10 000, 100 000, 1 000 000, 10 000 000 įrašų. Su kiekvienu failu atskirai atliekami tokie veiksmai.
-Surūšiuojami studentai į dvi kategorijas:
-- Studentai, kurių galutinis balas < 5.0.
-- Studentai, kurių galutinis balas >= 5.0.
+Konteinerių testavimas: matuojama v0.4 programos sparta panaudojant skirtingų tipų konteinerius.
 
-Surūšiuoti studentai išvedami į du naujus failus.
+Konteinerio tipas v0.5.1 - Vektorius.
 
-Išmatuojama programos sparta išskiriant kiek laiko užtruko kiekvienas iš žemiau išvardintų žingsnių:
-- (pasirinktinai) failo generavimo laikas;
-- duomenų nuskaitymas iš failo;
-- duomenų vektoriaus rikiavimas didėjimo tvarka;
-- duomenų vektoriaus padalijimas į dvi grupes;
-- duomenų išvedimas į du atskirus failus;
-- visos programos veikimo laikas.
+| Žingsniai | 1 000  | 10 000 | 100 000 | 1 000 000 | 10 000 000 |
+| --- | --- | --- | --- | --- | --- |
+| Nuskaitymas |0.010682|0.0854|0.623621|3.60492|40.8821|
+| Rūšiavimas |0.000266|0.005282|0.026576|0.260004|3.97401|
+| Skirstymas |0.000796|0.003738|0.010275|0.115189|1.04849|
+
+
+Testavimo sistemos parametrai:
+
+CPU: Intel Core i5-7200U (2 branduoliai, 2.5 GHz)
+
+RAM: 8 GB (2133 MHz)
+
+HDD: 128 GB TOSHIBA THNSNK128GCS8 SATA SSD
