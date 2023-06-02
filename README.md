@@ -14,6 +14,7 @@
 
 - Atsisiųsti papildoma.cpp failą.
 - Patalpinti tekstinį failą, kurį norite išanalizuoti į tą pačią direktyvą kaip ir papildoma.cpp. Pavadinkite tekstinį failą tekstas.txt
+- Patalpinti tekstinį failą 'domenai.txt' į tą pačią direktyvą.
 - Sukompiliuokite ir paleiskite programą.
 
 # Išvestis
