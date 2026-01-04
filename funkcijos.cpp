@@ -30,13 +30,13 @@ void generate(const std::string& write_vardas, int& n) {
     std::cout << "Laikas sugaistas generuoti " << n << " studentu duomenis: " << diff.count() << " s\n";
 }
 
-void mix(std::string read_vardas, std::string write_vardas, int n) {
-    std::string eil;
-    //----------------------------------------------------------------------
-    auto st = std::chrono::high_resolution_clock::now();
-    std::ifstream open_f(read_vardas);
-    std::ofstream out_f(write_vardas);
-    std::vector<std::string> out;
+void mix(std::string read_vardas, std::string write_vardas, int n) {                // 1. Siūlau šį metodą išskaidyti į kelias mažesnes 
+    std::string eil;                                                                // funkcijas, pvz.: duomenų nuskaitymo, studento 
+    //----------------------------------------------------------------------        // apdorojimo ir rezultatų išvedimo, kadangi
+    auto st = std::chrono::high_resolution_clock::now();                            // tai sumažintų dabartinį ciklomatinį kompleksiškumą,
+    std::ifstream open_f(read_vardas);                                              // kuris lygus 7. Būtų lengviau skaityti, leistų
+    std::ofstream out_f(write_vardas);                                              // testuoti kiekvieną dalį atskirai. Būtų laikomasi
+    std::vector<std::string> out;                                                   // Single Responsibility principo.
 
     out_f << std::left << std::setw(15) << "Vardas" << std::setw(20) << "Pavarde";
     out_f << "Galutinis (Vid.)" << std::endl;
@@ -46,10 +46,10 @@ void mix(std::string read_vardas, std::string write_vardas, int n) {
         if (!open_f) {
             throw std::runtime_error("Tuscias ivesties failas");
         }
-        while (open_f) {
-            if (!open_f.eof()) {
-                std::getline(open_f, eil);
-                std::istringstream iss(eil);
+        while (open_f) {                                                            // 2. Siūlyčiau šią nested while-if kombinaciją
+            if (!open_f.eof()) {                                                    // pakeisti į while (std::getline(open_f, eil)),
+                std::getline(open_f, eil);                                          // kadangi tai sumažintų sąlygų skaičių, paprasčiau
+                std::istringstream iss(eil);                                        // skaitoma.
                 studentas temp(iss);
                 eilute(eil, temp);
                 //grupe.push_back(std::move(temp));
@@ -67,16 +67,16 @@ void mix(std::string read_vardas, std::string write_vardas, int n) {
     // std::cout << grupe.size() << "\n";
 
     std::string outputas = "";
-    for (std::string& a : out)
-        (a.compare(*out.rbegin()) != 0) ? outputas += a + "\n" : outputas += a;
-
-    out.clear();
+    for (std::string& a : out)                                                       // 3. Siūlau išvedimą daryti tiesiai į išvesties failą,
+        (a.compare(*out.rbegin()) != 0) ? outputas += a + "\n" : outputas += a;      // papildomai nekaupiant string eilutės outputas. 
+                                                                                     // Tada ši vieta būtų paprastesnės logikos, sumažėtų 
+    out.clear();                                                                     // atminties naudojimas.
 
     out_f << outputas;
     out_f.close();
 
     //std::cout<<outputas;
-    std::chrono::duration<double> diff = std::chrono::high_resolution_clock::now() - st;  // Skirtumas (s)
+    std::chrono::duration<double> diff = std::chrono::high_resolution_clock::now() - st;          // 4. Kintamajį st siūlyčiau pervadinti start, kad geriau atspindėtų reikšmę, palengvintų ilgalaikę priežiūrą.
     std::cout << "Laikas sugaistas nuskaityti ir suskaiciuoti " << n << " studentu galutinius balus: " << diff.count() << " s\n";
 }
 
@@ -136,4 +136,5 @@ std::vector<std::string> gudruciai_out = {
     "gudruciai100k_rez.txt",
     "gudruciai1M_rez.txt",
     //"gudruciai10M_rez.txt"
+
 };
